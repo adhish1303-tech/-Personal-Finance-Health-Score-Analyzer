@@ -1,0 +1,8 @@
+# Generated output files
+anomalies.csv
+category_breakdown.csv
+monthly_summary.csv
+
+# Python cache files
+__pycache__/
+*.pyc
