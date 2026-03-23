@@ -1,0 +1,65 @@
+#----------Gerenarte_data.py----------#
+# --- FUNCTIONS USED ---
+# np.random.seed()     → makes random data consistent
+# np.random.choice()   → randomly picks from a list
+# np.random.randint()  → generates random integers
+# np.random.normal()   → generates numbers in a bell curve (realistic amounts)
+# pd.date_range()      → creates a sequence of dates
+# pd.DataFrame()       → creates the table structure
+# df.to_csv()          → saves DataFrame to a CSV file
+
+
+#----------Analysis.py----------#
+# --- FUNCTIONS USED ---#
+
+1) load_clean()
+# pd.read_csv()            → reads CSV into a DataFrame
+# pd.to_datetime()         → converts string column to datetime type
+# df.isnull().sum()        → counts missing values per column
+# df.dropna()              → removes rows with missing values
+# df.dtypes                → shows data type of each column
+# df.shape                 → returns (rows, columns) count
+# df.head()                → shows first 5 rows
+# df.describe()            → summary stats (mean, std, min, max)
+
+2) add_features()
+# df["col"].dt.month       → extracts month number from datetime
+# df["col"].dt.year        → extracts year from datetime
+# df["col"].dt.month_name()→ extracts month name ("January" etc.)
+# df["col"].str.lower()    → converts strings to lowercase (standardize)
+# np.where()               → conditional assignment (like Excel IF formula)
+
+3) monthly_summary()
+# df.groupby()             → groups rows by a column (like pivot in Excel)
+# grouped.agg()            → applies multiple aggregations at once
+# df[df["col"] == val]     → boolean filtering (select specific rows)
+# .reset_index()           → converts group keys back into columns
+# pd.merge()               → joins two DataFrames (like SQL JOIN)
+# np.round()               → rounds numbers to N decimal places
+
+4) category_breakdown()
+# df.groupby().sum()       → total per group
+# df.sort_values()         → sorts rows by a column
+# Series / Series          → element-wise division (pandas operation)
+# .round()                 → rounds to N decimals
+# .to_frame()              → converts Series to DataFrame
+# .reset_index()           → flattens grouped index
+
+5) dectection_anomalies(df)
+# df.groupby().transform() → adds group-level stats as a new column
+# np.mean()                → calculates average
+# np.std()                 → calculates standard deviation
+# Boolean masking          → df[df["col"] > value]
+# .copy()                  → avoids modifying original DataFrame
+
+6) calculate_health_score()
+# np.clip()                → clamps a value between a min and max
+# np.average()             → weighted average
+# np.mean()                → simple mean across months
+# np.std()                 → standard deviation (used for consistency)
+# np.maximum()             → element-wise maximum (avoid division errors)
+
+7) export_results()
+# pd.concat()              → stacks DataFrames vertically
+# df.to_csv()              → saves to CSV
+# df.assign()              → adds a new column inline
